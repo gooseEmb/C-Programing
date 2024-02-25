@@ -8,7 +8,15 @@
 8 - git checkout -b name rama
 9 - git checkout master
 10 - git branch -d name rama
-git remote add origin https://github.com/gooseEmb/C.git
-git branch -M main
+
+
+
+
+
+
+- subir los archivos a la nube
+git remote add origin https://github.com/gooseEmb+./C.git
 git push -u origin main
-sdfs
+
+//si existe un error en el comando de arriba
+git remote remove origin
