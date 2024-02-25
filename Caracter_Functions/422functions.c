@@ -5,16 +5,19 @@ int isCharacter(char c);
 int isUpperCase(char c);
 int isLowerCase(char c);
 char toLower(char c);
-
+char toUpper(char c);
 int main()
 {
-    char value = 'A';
+    char value = '1';
+    char value2 = 'g';
+    printf("es digito(%c) = %d\n", value, isDigit(value));
     printf("%d \n",isDigit(value));
-    printf("%c",toLower(value));
+    printf("%c\n",toLower(value));
+    printf("%c", toUpper(value2));
     return 0;
 }
 
-/*
+/*  
 determina si es un caracter o es un numero
 */
 int isDigit(char c){
@@ -39,5 +42,10 @@ int isLowerCase(char c){
 /*convert upper to lower*/
 
 char toLower(char c){
-    return isUpperCase(c)?c-'A'+'a':c;
+    return isUpperCase(c)?c+32:c;
+}
+
+/*convert lower to upper*/
+char toUpper(char c){
+    return isLowerCase?c-'a'+'A':c;
 }
