@@ -22,11 +22,24 @@ de mayus a minusculas, convertir cadenas a numeros
 
 #include <string.h>
 void stringCopy(char theString[], char tempCpy[]);
+int longitud(char theString[]);
+int isEmpty(char theString[]);
+void concatenarCadenas(char string1[], char string2[]);
+
 int main(){
     char s[50]; 
+    char l[20]="hola ";
     stringCopy("texto para copiar", s);
     /*PARA MOSTRAR UN STRING SE USA %S*/  
-    printf("nom = %s", s);
+    printf("nom = %s\n", s);
+    /*devuelve el size del string*/
+    int size=0;
+    printf("size is: %d\n", longitud("hoy es el clasico de paceno"));
+    /*esta vacia la  cadena*/
+    printf("esta: %d\n", isEmpty(""));
+    /**concatenar 2 strings*/
+    concatenarCadenas(l, " friends");
+    printf("%s", l);
     return 0;
 }
 
@@ -39,4 +52,29 @@ void stringCopy(char theString[], char tempCpy[]){
         i=i+1;
     }    
     tempCpy[i] = '\0';
+}
+
+int longitud(char theString[]){
+    int count = 0;
+    while (theString[count] != '\0')
+    {
+        count++;
+    }
+    return count;
+}
+
+int isEmpty(char theString[]){
+    return theString[0]=='\0'; //ya tiene implicito ?1:0
+}
+
+void concatenarCadenas(char string1[], char string2[]){
+    int len = 0;
+    int j = longitud(string1);
+    while (string2[len] != '\0')
+    {
+        string1[j] = string2[len];
+        j++;
+        len++;
+    }
+    string1[j] = '\0'; 
 }
