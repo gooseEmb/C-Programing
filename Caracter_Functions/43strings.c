@@ -21,14 +21,18 @@ de mayus a minusculas, convertir cadenas a numeros
 */
 
 #include <string.h>
+#include <math.h>
 void stringCopy(char theString[], char tempCpy[]);
 int longitud(char theString[]);
 int isEmpty(char theString[]);
 void concatenarCadenas(char string1[], char string2[]);
-
+int CompararCadenas(char string1[], char string2[]);
+int cadenaAentero(char string1[]);
 int main(){
     char s[50]; 
-    char l[20]="hola ";
+    char l[]="hola";
+    char t[]="holads";
+    char numeros[]="32";
     stringCopy("texto para copiar", s);
     /*PARA MOSTRAR UN STRING SE USA %S*/  
     printf("nom = %s\n", s);
@@ -39,8 +43,9 @@ int main(){
     printf("esta: %d\n", isEmpty(""));
     /**concatenar 2 strings*/
     concatenarCadenas(l, " friends");
-    printf("%s", l);
-    return 0;
+    printf("%s\n", l);
+    printf("%d\n",CompararCadenas(l,t));
+    printf("%d",cadenaAentero("85432"));
 }
 
 /*copia una cadena */
@@ -77,4 +82,24 @@ void concatenarCadenas(char string1[], char string2[]){
         len++;
     }
     string1[j] = '\0'; 
+}
+
+int CompararCadenas(char string1[], char string2[]){
+    int i = 0;
+    while (string1[i] != '\0' && string2[i] != '\0' &&string1[i] == string2[i])
+    {
+            i=i+1; 
+    }
+    return(string1[i]-string2[i]);
+    //si me da 32 es igual por que \0-\0 = space 
+    //si me da cualquier otro numero es distinto
+}
+/*se necesito la libreria math.h para usar pow*/
+int cadenaAentero(char string1[]){
+    int valorEnNum = 0;
+    for (int i = 0; i < longitud(string1); i++)
+    {
+        valorEnNum = valorEnNum + pow(10,(longitud(string1)-i-1))*((int)string1[i]-48);
+    }
+    return valorEnNum;    
 }
