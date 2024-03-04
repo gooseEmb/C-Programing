@@ -1,0 +1,11 @@
+1. cual es la diferencia entre printf y sprintf
+2. por que cuando tengo una funcion void y dentro
+de la funcion tengo un printf no me deja llamar a
+la funcion con un printf("%s"funcion("Chiefs"))
+3. existen funciones como:
+    strcpy ---> copia cadena
+    strcat ---> concatena cadena
+    strlen ---> da la longitud
+    strcmp ---> compara cadenas
+    atoi   ---> convierte de cadena a entero
+    scanf  ---> recibe una cadena
